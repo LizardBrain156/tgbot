@@ -1,5 +1,6 @@
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
+from keep_alive import keep_alive
 import os
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -76,4 +77,5 @@ app.add_handler(MessageHandler(filters.TEXT & filters.Regex("^🤔 Кто я в�
 app.add_handler(MessageHandler(filters.TEXT & filters.Regex("^💘 Как я вижу любовь и отношения\\?$"), love_info))
 app.add_handler(MessageHandler(filters.TEXT & filters.Regex("^🤓 Чем я люблю заниматься\\?$"), hobbies_info))
 
+keep_alive()
 app.run_polling()
