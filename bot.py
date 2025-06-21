@@ -63,12 +63,6 @@ async def hobbies_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
 """
     )
 
-
-async def contact_me(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        ""
-    )
-
 TOKEN = os.getenv("BOT_TOKEN")
 app = ApplicationBuilder().token(TOKEN).build()
 
